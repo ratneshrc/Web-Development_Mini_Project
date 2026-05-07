@@ -4,196 +4,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flipkart</title>
+    <title>Flipkart Clone</title>
 
     <style>
 
-        /* Header */
-        .header {
-            width: 90%;
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f1f3f6;
+        }
+
+        /* MAIN */
+        .main-container{
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        /* HEADER */
+        .header{
+            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 25px 12px 25px;
+            padding: 15px 25px;
             background-color: #f1f3f6;
-            font-family: Arial, sans-serif;
         }
 
-        /* Left section */
-        .left-section {
+        /* LEFT */
+        .left-section{
             display: flex;
             align-items: center;
             gap: 15px;
         }
 
-        /* Logo */
-        .logo {
+        /* LOGO */
+        .logo{
             background-color: #ffe500;
-            padding: 8px 18px;
+            padding: 10px 18px;
             border-radius: 10px;
-            font-weight: bold;
             font-size: 18px;
+            font-weight: bold;
         }
 
-        /* f icon */
-        .logo .f {
+        .logo .f{
             color: #2874f0;
-            font-weight: bold;
             margin-right: 5px;
         }
 
-        /* Menu */
-        .menu {
+        /* MENU */
+        .menu{
             background-color: #e5e5e5;
-            padding: 8px 15px;
+            padding: 10px 16px;
             border-radius: 10px;
-            font-size: 14px;
             cursor: pointer;
         }
 
-        .menu:hover {
+        .menu:hover{
             background-color: #dcdcdc;
         }
 
-        /* Right section */
-        .right-section {
+        /* RIGHT */
+        .right-section{
             display: flex;
             align-items: center;
             gap: 5px;
             font-size: 14px;
         }
 
-        /* Location link */
-        .location-text a {
+        .right-section a{
             color: #2874f0;
             text-decoration: none;
-            font-weight: 500;
         }
 
-        .location-text a:hover {
+        .right-section a:hover{
             text-decoration: underline;
         }
 
         /* SEARCH BAR */
-        .search-bar {
+        .search-bar{
+            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 25px;
             background-color: white;
+            padding: 15px 25px;
             border-bottom: 1px solid #ddd;
         }
 
-        /* Input */
-        .search-bar input {
-            width: 60%;
-            padding: 12px;
+        .search-bar input{
+            width: 62%;
+            padding: 14px;
             border: 2px solid #2874f0;
             border-radius: 10px;
             outline: none;
-            font-size: 14px;
+            font-size: 15px;
         }
 
-        /* Right icons */
-        .search-icons {
+        .search-icons{
             display: flex;
-            gap: 20px;
-            font-size: 14px;
+            gap: 25px;
+            font-size: 15px;
             cursor: pointer;
         }
 
         /* CATEGORY BAR */
-        .category-bar {
+        .category-bar{
+            width: 100%;
             display: flex;
             justify-content: space-around;
-            padding: 10px 0;
+            align-items: center;
             background-color: white;
+            padding: 15px 0;
             border-bottom: 1px solid #ddd;
         }
 
-        /* Each category */
-        .category {
-            font-size: 13px;
+        .category{
+            font-size: 14px;
             cursor: pointer;
             padding-bottom: 5px;
         }
 
-        /* Active underline */
-        .category.active {
+        .category.active{
             border-bottom: 3px solid #2874f0;
             font-weight: bold;
         }
 
-        /* Main */
-        .main-container {
-            width: 100%;
-            min-height: 100vh;
-            background-color: #f1f3f6;
-        }
-
-        /* Body */
-        .container-body {
+        /* BODY */
+        .container-body{
             padding: 20px;
         }
 
-        .container-slider {
-            overflow: hidden;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
-        /* Wrapper */
-        .slider-wrapper {
-            display: flex;
-        }
-
-        /* Each slide */
-        .slide {
-            min-width: 20%;
-            margin: 6px;
-        }
-
-        /* Image */
-        .slide img {
+        /* SLIDER */
+        .container-slider{
             width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 25px;
         }
 
-        /* Product section */
-        .product-section {
+        .slider-wrapper{
             display: flex;
-            gap: 20px;
+            gap: 15px;
         }
 
-        /* Card */
-        .product-card {
-            background-color: white;
-            padding: 15px;
+        .slide{
+            width: 33%;
+        }
+
+        .slide img{
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
             border-radius: 12px;
-            width: 200px;
+        }
+
+        /* PRODUCTS */
+        .product-section{
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .product-card{
+            width: 280px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
             text-align: center;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            cursor: pointer;
+            transition: 0.3s;
         }
 
-        /* Image */
-        .product-card img {
+        .product-card:hover{
+            transform: scale(1.05);
+        }
+
+        .product-card img{
             width: 100%;
-            height: 150px;
+            height: 180px;
             object-fit: contain;
         }
 
-        /* Text */
-        .product-card h4 {
-            margin-top: 10px;
+        .product-card h3{
+            margin-top: 15px;
+            font-size: 24px;
         }
 
-        /* Hover effect */
-        .product-card:hover {
-            transform: scale(1.05);
-            transition: 0.3s;
+        .product-card p{
+            margin-top: 10px;
+            font-size: 15px;
+            font-weight: bold;
         }
 
     </style>
@@ -204,11 +208,11 @@
 
     <div class="main-container">
 
-        <!-- Header -->
+        <!-- HEADER -->
         <div class="header">
 
-            <!-- Left -->
             <div class="left-section">
+
                 <div class="logo">
                     <span class="f">f</span> Flipkart
                 </div>
@@ -216,9 +220,9 @@
                 <div class="menu">
                     ✈️ Travel
                 </div>
+
             </div>
 
-            <!-- Right -->
             <div class="right-section">
                 <span>📍 Location not set</span>
                 <a href="#">Select delivery location ></a>
@@ -239,7 +243,7 @@
 
         </div>
 
-        <!-- CATEGORY BAR -->
+        <!-- CATEGORY -->
         <div class="category-bar">
 
             <div class="category active">For You</div>
@@ -256,45 +260,61 @@
 
         </div>
 
-        <!-- Body -->
+        <!-- BODY -->
         <div class="container-body">
 
+            <!-- SLIDER -->
             <div class="container-slider">
+
                 <div class="slider-wrapper">
 
                     <div class="slide">
-                        <img src="flipkart1.webp" alt="">
+                        <img src="./images/flipkart1.webp" alt="">
                     </div>
 
                     <div class="slide">
-                        <img src="flipkart2.webp" alt="">
+                        <img src="./images/flipkart2.webp" alt="">
                     </div>
 
                     <div class="slide">
-                        <img src="flipkart3.webp" alt="">
+                        <img src="./images/flipkart3.webp" alt="">
                     </div>
 
                 </div>
+
             </div>
 
+            <!-- PRODUCTS -->
             <div class="product-section">
 
                 <div class="product-card">
-                    <img src="https://imgs.search.brave.com/jcDwNEXew3jOaT7rkarW83iL8pSSdkOVnFaireAgUBA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9ydWttaW5pbTIuZmxpeGNhcnQuY29tL2ltYWdlLzgwMC8xMDcwL3hpZjBxL21vYmlsZS93L2Qvby8xNXItNWctaTI1MDgtaXFvby1vcmlnaW5hbC1pbWFoaGZwYzJlam1naHlnLmpwZWc_cT04MA"
-                        alt="IQOO 15R">
-                    <h4>Just ₹40000</h4>
+
+                    <img src="https://imgs.search.brave.com/jcDwNEXew3jOaT7rkarW83iL8pSSdkOVnFaireAgUBA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9ydWttaW5pbTIuZmxpeGNhcnQuY29tL2ltYWdlLzgwMC8xMDcwL3hpZjBxL21vYmlsZS93L2Qvby8xNXItNWctaTI1MDgtaXFvby1vcmlnaW5hbC1pbWFoaGZwYzJlam1naHlnLmpwZWc_cT04MA" alt="IQOO">
+
+                    <h3>IQOO 15R</h3>
+
+                    <p>Just ₹40000</p>
+
                 </div>
 
                 <div class="product-card">
-                    <img src="https://imgs.search.brave.com/LNocikxc1yZv_kWN4ZNJhEdWzNrCAcnWwLTYPtJ_7sk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cubGl2ZW1pbnQuY29tL2xtLWltZy9pbWcvMjAyNS8xMC8wNi8zODJ4MjE0L2tubm5ubm5ubm5fMTc1OTcyNDMxMTAwMV8xNzU5NzI0MzE2MzQzLnBuZw"
-                        alt="iPhone 16 pro max">
-                    <h4>Up to 70% Off</h4>
+
+                    <img src="https://imgs.search.brave.com/LNocikxc1yZv_kWN4ZNJhEdWzNrCAcnWwLTYPtJ_7sk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cubGl2ZW1pbnQuY29tL2xtLWltZy9pbWcvMjAyNS8xMC8wNi8zODJ4MjE0L2tubm5ubm5ubm5fMTc1OTcyNDMxMTAwMV8xNzU5NzI0MzE2MzQzLnBuZw" alt="iPhone">
+
+                    <h3>iPhone 16 Pro Max</h3>
+
+                    <p>Up to 70% Off</p>
+
                 </div>
 
                 <div class="product-card">
-                    <img src="https://imgs.search.brave.com/Zj8SazspksyzADIU3EWLGWxpY7bCVauDJFS0s3bbUFM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9ydWttaW5pbTIuZmxpeGNhcnQuY29tL2ltYWdlLzMxMi8zMTIveGlmMHEvbGFwdG9wLXNraW4tZGVjYWwvNS9uLzMvZnVsbC1ib2R5LWxhcHRvcC1za2luLXN0aWNrZXItc2F0b3J1LWdvam8tYWNpZC1ibHVlLWV5ZXMtanVqdXRzdS1vcmlnaW5hbC1pbWFndzV4cGp4YWdteXBrLmpwZWc_cT03MCZjcm9wPWZhbHNl"
-                        alt="Laptop Skin">
-                    <h4>Starting from ₹199</h4>
+
+                    <img src="https://imgs.search.brave.com/Zj8SazspksyzADIU3EWLGWxpY7bCVauDJFS0s3bbUFM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9ydWttaW5pbTIuZmxpeGNhcnQuY29tL2ltYWdlLzMxMi8zMTIveGlmMHEvbGFwdG9wLXNraW4tZGVjYWwvNS9uLzMvZnVsbC1ib2R5LWxhcHRvcC1za2luLXN0aWNrZXItc2F0b3J1LWdvam8tYWNpZC1ibHVlLWV5ZXMtanVqdXRzdS1vcmlnaW5hbC1pbWFndzV4cGp4YWdteXBrLmpwZWc_cT03MCZjcm9wPWZhbHNl" alt="Laptop Skin">
+
+                    <h3>Laptop Skin</h3>
+
+                    <p>Starting from ₹199</p>
+
                 </div>
 
             </div>
